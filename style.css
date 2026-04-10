@@ -4,9 +4,10 @@
 
 body {
   margin: 0;
-  background: #000000;
-  color: white;
-  font-family: Arial, sans-serif;
+  background: #000;
+  color: #fff;
+  font-family: system-ui, "Helvetica Neue", Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
 }
 
 /* App container */
@@ -25,18 +26,20 @@ body {
   align-items: center;
   justify-content: center;
   height: 100%;
-  max-width: 900px;
+  max-width: 680px;
   width: 100%;
-  padding: 40px;
-  gap: 20px;
+  padding: 60px 40px;
+  gap: 16px;
   text-align: center;
 }
 
 /* Title */
 h1 {
-  font-weight: 300;
-  font-size: 32px;
-  letter-spacing: 2px;
+  font-weight: 200;
+  font-size: 28px;
+  letter-spacing: 6px;
+  text-transform: uppercase;
+  margin: 0;
 }
 
 /* Subtext */
@@ -47,51 +50,177 @@ p {
 
 /* Input */
 input {
-  padding: 12px;
+  padding: 12px 16px;
   width: 60%;
-  background: #111;
-  border: 1px solid #222;
-  color: white;
+  background: #0a0a0a;
+  border: 1px solid #1a1a1a;
+  border-bottom-color: #2a2a2a;
+  color: #fff;
   outline: none;
+  font-family: inherit;
+  font-size: 14px;
+  letter-spacing: 0.5px;
+  transition: border-bottom-color 0.2s ease;
+}
+
+input:focus {
+  border-bottom-color: rgba(77, 140, 255, 0.6);
+}
+
+input::placeholder {
+  color: #2e2e2e;
 }
 
 /* Buttons */
 button {
   margin-top: 10px;
-  padding: 12px 24px;
-  background: #111;
-  border: 1px solid #222;
-  color: white;
+  padding: 12px 28px;
+  background: #0a0a0a;
+  border: 1px solid #1e1e1e;
+  color: #555;
   cursor: pointer;
-  transition: 0.2s ease;
+  font-family: inherit;
+  font-size: 11px;
+  letter-spacing: 2.5px;
+  text-transform: uppercase;
+  transition: all 0.2s ease;
 }
 
 button:hover {
-  background: #222;
-  border: 1px solid #555;
+  border-color: #333;
+  color: #ccc;
 }
 
 button:disabled {
-  opacity: 0.3;
+  opacity: 0.25;
   cursor: not-allowed;
 }
 
 /* Hold button */
 #holdButton {
-  margin-top: 40px;
-  padding: 20px;
-  width: 220px;
+  margin-top: 52px;
+  padding: 18px 36px;
+  width: 240px;
   text-align: center;
-  background: #111;
-  border: 1px solid #222;
-  border-radius: 12px;
+  background: #080808;
+  border: 1px solid #1c1c1c;
+  border-radius: 3px;
   cursor: pointer;
   user-select: none;
-  transition: 0.2s ease;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+  position: relative;
+  overflow: hidden;
 }
 
 #holdButton:active {
-  background: #333;
-  border: 1px solid #888;
-  transform: scale(0.98);
+  border-color: rgba(77, 140, 255, 0.35);
+  box-shadow: 0 0 24px rgba(77, 140, 255, 0.07);
+}
+
+#holdProgress {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 0%;
+  background: rgba(77, 140, 255, 0.1);
+  border-radius: 3px;
+  transition: width 0.05s linear;
+}
+
+#holdButton span {
+  position: relative;
+  z-index: 1;
+  font-size: 11px;
+  letter-spacing: 2.5px;
+  text-transform: uppercase;
+  color: #555;
+}
+
+.gold-habit {
+  color: #c9963a;
+}
+
+.gold-label {
+  color: #7a5a1e;
+  font-size: 10px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  margin: -8px 0 0 0;
+}
+
+.multiplier-display {
+  font-size: 10px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: #333;
+  margin: 0;
+}
+
+.habit-title {
+  font-size: 62px;
+  font-weight: 100;
+  letter-spacing: 5px;
+  text-transform: uppercase;
+  margin: 16px 0;
+  line-height: 1.1;
+}
+
+.habit-progress {
+  font-size: 10px;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  color: #333;
+  margin: 0;
+}
+
+#habitList {
+  display: flex;
+  flex-direction: column;
+  width: 60%;
+  margin-top: 4px;
+}
+
+#habitList p {
+  font-size: 13px;
+  letter-spacing: 1px;
+  color: #444;
+  padding: 8px 0;
+  border-bottom: 1px solid #111;
+  margin: 0;
+}
+
+.complete-eyebrow {
+  font-size: 10px;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  color: #333;
+  margin: 0;
+}
+
+.complete-stats {
+  display: flex;
+  gap: 56px;
+  margin-top: 12px;
+}
+
+.complete-stat {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+}
+
+.complete-stat-value {
+  font-size: 52px;
+  font-weight: 100;
+  letter-spacing: 3px;
+  color: #fff;
+}
+
+.complete-stat-label {
+  font-size: 10px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: #333;
 }
