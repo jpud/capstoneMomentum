@@ -5,11 +5,75 @@
     <title>Momentum</title>
     <link rel="stylesheet" href="style.css" />
   </head>
-  <body>
+  <body data-theme="dark">
+    <canvas id="starfield"></canvas>
+
+    <button id="settings-btn">Settings</button>
+
+    <div id="character-wrap">
+      <div id="character-glow"></div>
+      <img id="character" src="MOMO1.png" alt="" />
+    </div>
+
+    <div id="momo-quote"></div>
+
     <div id="app">
       <div id="content"></div>
     </div>
 
+    <div id="settings-overlay">
+      <div class="settings-panel">
+        <p class="settings-title">Settings</p>
+        <div class="settings-divider"></div>
+        <div class="settings-row">
+          <p class="settings-label">Theme</p>
+          <button id="theme-toggle-btn">Light Mode</button>
+        </div>
+        <button class="settings-close-btn" id="settings-close-btn">
+          Close
+        </button>
+      </div>
+    </div>
+
+    <div id="onboarding-overlay" class="onboarding-overlay">
+      <div id="onboarding-card" class="onboarding-card">
+        <p class="onboarding-eyebrow" id="onboarding-eyebrow"></p>
+        <h2 class="onboarding-title" id="onboarding-title"></h2>
+        <div class="onboarding-divider"></div>
+        <p class="onboarding-body" id="onboarding-body"></p>
+        <input
+          id="onboarding-name-input"
+          class="onboarding-name-input"
+          placeholder="Enter your name"
+          maxlength="24"
+          autocomplete="off"
+        />
+        <div class="onboarding-actions">
+          <button class="onboarding-back-btn" id="onboarding-back-btn">
+            Back
+          </button>
+          <button class="onboarding-next-btn" id="onboarding-next-btn">
+            Next
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <div id="modal-overlay" class="modal-overlay">
+      <div id="modal-box" class="modal-box">
+        <p class="modal-title" id="modal-title"></p>
+        <p class="modal-message" id="modal-message"></p>
+        <div class="modal-actions">
+          <button class="modal-cancel-btn" id="modal-cancel-btn">Cancel</button>
+          <button class="modal-confirm-btn" id="modal-confirm-btn">
+            Confirm
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <script src="momentum.js"></script>
     <script src="script.js"></script>
+    <script src="stars.js"></script>
   </body>
 </html>
